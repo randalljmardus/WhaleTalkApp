@@ -13,8 +13,8 @@ class ChatCell: UITableViewCell {
     let messageLabel: UILabel = UILabel()
     private let bubbleImageView = UIImageView()
     
-    private var outgoingConstraint: NSLayoutConstraint!
-    private var incomingConstraint: NSLayoutConstraint!
+    private var outgoingConstraints: [NSLayoutConstraint]!
+    private var incomingConstraints: [NSLayoutConstraint]!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,10 +30,19 @@ class ChatCell: UITableViewCell {
         bubbleImageView.widthAnchor.constraintEqualToAnchor(messageLabel.widthAnchor, constant: 50).active = true
         bubbleImageView.heightAnchor.constraintEqualToAnchor(messageLabel.heightAnchor).active = true
         
-        bubbleImageView.topAnchor.constraintEqualToAnchor(contentView.topAnchor).active = true
+        outgoingConstraints = [
+            bubbleImageView.trailingAnchor.constraintEqualToAnchor(contentView.trailingAnchor),
+            bubbleImageView.leadingAnchor.constraintEqualToAnchor(contentView
+            .centerXAnchor)
+        ]
         
-        outgoingConstraint = bubbleImageView.trailingAnchor.constraintEqualToAnchor(contentView.trailingAnchor)
-        incomingConstraint = bubbleImageView.leadingAnchor.constraintEqualToAnchor(contentView.leadingAnchor)
+        incomingConstraints = [
+            bubbleImageView.leadingAnchor.constraintEqualToAnchor(contentView.leadingAnchor),
+            bubbleImageView.trailingAnchor.constraintEqualToAnchor(contentView.centerXAnchor)
+        ]
+        
+        bubbleImageView.topAnchor.constraintEqualToAnchor(contentView.topAnchor, constant: 10).active = true
+        bubbleImageView.bottomAnchor.constraintEqualToAnchor(contentView.bottomAnchor, constant: -10).active = true
         
         messageLabel.textAlignment = .Center
         messageLabel.numberOfLines = 0
