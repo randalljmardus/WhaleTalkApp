@@ -32,6 +32,7 @@ class ChatViewController: UIViewController {
         tableView.registerClass(ChatCell.self, forCellReuseIdentifier: cellIdentifier)
         
         tableView.dataSource = self
+        tableView.delegate = self
             
             
         }
@@ -70,6 +71,12 @@ extension ChatViewController: UITableViewDataSource {
         cell.incoming(message.incoming)
         return cell
         
+    }
+}
+
+extension ChatViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
     }
 }
 
