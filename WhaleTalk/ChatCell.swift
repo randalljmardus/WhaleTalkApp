@@ -69,7 +69,24 @@ func makeBubble() -> (incoming: UIImage, outgoing: UIImage) {
 
     let incoming = coloredImage(flippedImage, red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
 
-    return
+    return (incoming, outgoing)
+}
+
+func coloredImage(image: UIImage, red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIImage! {
+    
+    let rect = CGRect(origin: CGPointZero, size: image.size)
+    UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+    
+    let context = UIGraphicsGetCurrentContext()
+    image.drawInRect(rect)
+    
+    CGContextSetRGBFillColor(context, red, green, blue, alpha)
+    CGContextSetBlendMode(context, CGBlendMode.SourceAtop)
+    CGContextFillRect(context, rect)
+    let result = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return result
 }
 
 
