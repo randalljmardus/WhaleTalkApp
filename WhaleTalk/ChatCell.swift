@@ -55,13 +55,13 @@ class ChatCell: UITableViewCell {
     
     func incoming(incoming: Bool) {
         if incoming {
-            incomingConstraint.active = true
-            outgoingConstraint.active = false
+            NSLayoutConstraint.deactivateConstraints(outgoingConstraints)
+            NSLayoutConstraint.activateConstraints(incomingConstraints)
             bubbleImageView.image = bubble.incoming
         }
         else {
-            incomingConstraint.active = false
-            outgoingConstraint.active = true
+            NSLayoutConstraint.deactivateConstraints(incomingConstraints)
+            NSLayoutConstraint.activateConstraints(outgoingConstraints)
             bubbleImageView.image = bubble.outgoing
         }
     }
