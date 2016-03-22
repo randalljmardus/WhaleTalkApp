@@ -13,6 +13,7 @@
 		1550711A1C9B4BFB00E8D17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155071191C9B4BFB00E8D17E /* Assets.xcassets */; };
 		1550711D1C9B4BFB00E8D17E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1550711B1C9B4BFB00E8D17E /* LaunchScreen.storyboard */; };
 		155071251C9B570E00E8D17E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155071241C9B570E00E8D17E /* Message.swift */; };
+		155071271C9B60C300E8D17E /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155071261C9B60C300E8D17E /* ChatCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1550711C1C9B4BFB00E8D17E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1550711E1C9B4BFB00E8D17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		155071241C9B570E00E8D17E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		155071261C9B60C300E8D17E /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				155071121C9B4BFB00E8D17E /* AppDelegate.swift */,
 				155071141C9B4BFB00E8D17E /* ChatViewController.swift */,
+				155071261C9B60C300E8D17E /* ChatCell.swift */,
 				155071241C9B570E00E8D17E /* Message.swift */,
 				155071161C9B4BFB00E8D17E /* Main.storyboard */,
 				155071191C9B4BFB00E8D17E /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				155071251C9B570E00E8D17E /* Message.swift in Sources */,
+				155071271C9B60C300E8D17E /* ChatCell.swift in Sources */,
 				155071151C9B4BFB00E8D17E /* ChatViewController.swift in Sources */,
 				155071131C9B4BFB00E8D17E /* AppDelegate.swift in Sources */,
 			);
