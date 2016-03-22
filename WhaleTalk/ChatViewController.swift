@@ -35,6 +35,8 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
             
+        tableView.estimatedRowHeight = 44
+            
             
         }
         
